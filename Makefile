@@ -61,7 +61,7 @@ https-client: https-client.o $(COMMON_OBJS)
 	$(CC) $(CFLAGS) -o $@ $^ $(GSKLIB)
 
 https-server: https-server.o $(COMMON_OBJS)
-  
+	_C89_LSYSLIB="CEE.SCEELKED:SYS1.CSSLIB:CSF.SCSFMOD0" \
 	$(CC) $(CFLAGS) -o $@ $^  $(GSKLIB)
 
 %.o:	$(ZOWECOMMON)/c/%.c
