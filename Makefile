@@ -54,12 +54,10 @@ COMMON_OBJS:=alloc.o \
             zosaccounts.o \
             zvt.o
 
-all:	setup https-client https-server
-
-setup:	
-	_C89_LSYSLIB="CEE.SCEELKED:SYS1.CSSLIB:CSF.SCSFMOD0"
+all:	https-client https-server
 
 https-client: https-client.o $(COMMON_OBJS)
+	_C89_LSYSLIB="CEE.SCEELKED:SYS1.CSSLIB:CSF.SCSFMOD0" \
 	$(CC) $(CFLAGS) -o $@ $^ $(GSKLIB)
 
 https-server: https-server.o $(COMMON_OBJS)
@@ -84,4 +82,4 @@ https-server: https-server.o $(COMMON_OBJS)
 clean:	
 	rm -f *.o *.lst https-client https-server
 
-.PHONY:	clean setup
+.PHONY:	clean
