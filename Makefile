@@ -57,7 +57,7 @@ COMMON_OBJS:=alloc.o \
 all:	setup https-client https-server
 
 setup:	
-	export _C89_LSYSLIB="CEE.SCEELKED:SYS1.CSSLIB:CSF.SCSFMOD0"
+	_C89_LSYSLIB="CEE.SCEELKED:SYS1.CSSLIB:CSF.SCSFMOD0"
 
 https-client: https-client.o $(COMMON_OBJS)
 	$(CC) $(CFLAGS) -o $@ $^ $(GSKLIB)
