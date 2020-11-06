@@ -1,2 +1,5 @@
 *.c text eol=lf
 Makefile text eol=lf
+*.kdb git-encoding=BINARY    zos-working-tree-encoding=BINARY binary
+*.rdb git-encoding=BINARY    zos-working-tree-encoding=BINARY binary
+*.sth git-encoding=BINARY    zos-working-tree-encoding=BINARY binary
